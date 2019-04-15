@@ -1,0 +1,14 @@
+---
+- hosts: node1
+  remote_user: root
+  become: yes
+  become_user: ubuntu
+
+  tasks:
+  - name: ping test check
+    command: echo $USER
+    register: result
+
+  - debug: msg={{result}}
+
+

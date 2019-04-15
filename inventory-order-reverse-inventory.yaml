@@ -1,0 +1,8 @@
+---
+- hosts: all
+  order: reverse_inventory
+  gather_facts: false
+  remote_user: ubuntu
+
+  tasks:
+  - debug: var=inventory_hostname 

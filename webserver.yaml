@@ -1,0 +1,12 @@
+---
+- hosts: node1 
+  vars:
+    name: purushotham
+    city: Bengaluru
+  remote_user: root
+
+  tasks:
+  - name: ensuring whether httpd is installed or not
+    apt: 
+      name: apache2
+      state: present

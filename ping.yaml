@@ -1,0 +1,21 @@
+---
+- hosts: node1
+  remote_user: root
+
+  tasks:
+  - name: finding running user
+    shell: echo $USER
+    register: user1
+
+  - debug: msg={{user1.stdout}}
+
+  - name: running as other user
+    shell: echo $USER
+    register: user2
+    remote_user: ubuntu
+
+  - debug: var=user2.stdout_lines
+
+  - name: ping test connection
+    ping:
+    remote_user: ubuntu
