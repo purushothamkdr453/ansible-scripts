@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: ubuntu
+
+  tasks:
+  - name: printing the os_family details
+    shell: echo {{ansible_facts['os_family']}}
+    register: output
+
+  - name: executing the logic based on the condition 
+    shell: echo "This is debian os"
+    when: output.stdout != 'Debian'

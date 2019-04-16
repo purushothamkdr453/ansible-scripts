@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: ubuntu
+
+
+  tasks:
+  - name: printing the facts using setup module
+    setup: filter=ansible_local
+

@@ -1,0 +1,8 @@
+---
+- hosts: node1
+  remote_user: ubuntu
+
+
+  tasks:
+  - name: priting the details using hostvars    
+    debug: msg="{{hostvars['node1']['ansible_facts']['os_family']}}"

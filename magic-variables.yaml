@@ -1,0 +1,16 @@
+---
+- hosts: all
+  remote_user: ubuntu
+
+  tasks:
+  - name: printing the magic variables
+    shell: echo {{inventory_hostname}}
+
+  - name: printing the inventory directory
+    shell : echo {{inventory_dir}}
+
+  - name: printing the playbook directory
+    shell: echo {{playbook_dir}}
+
+  - name: printing the playbook python script
+    shell: echo {{ansible_playbook_python}}

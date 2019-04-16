@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: ubuntu
+
+  tasks:
+  - name: creating the diretory in remote server
+    file: dest=/etc/ansible/facts.d/ state=directory mode=777 recurse=yes
+    become: yes
+
+  - name: copying the facts from ansible server to remote server
+    copy: src=/home/ubuntu/ansible-learning/preferences.fact dest=/etc/ansible/facts.d/
+
+  - name: printing the facts
+    debug: msg="{{ansible_local['preferences']['details']['name']}}"

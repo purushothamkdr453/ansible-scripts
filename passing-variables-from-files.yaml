@@ -1,0 +1,11 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  vars:
+    favcolor: blue
+  vars_files:
+    - /home/ubuntu/ansible-learning/vars/external_vars.yaml
+
+  tasks:
+  - name: printing the fav color
+    shell: echo {{names[1]}}

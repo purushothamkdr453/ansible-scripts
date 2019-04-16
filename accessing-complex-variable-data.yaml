@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: ubuntu
+
+  tasks:
+  - name: accessning the complex variable data
+    shell: echo {{ansible_facts['eth0']['ipv4']['address']}}
+
+  - name: printing the complex variable data using dot notation
+    shell: echo {{ansible_facts.eth0.ipv4.address}}

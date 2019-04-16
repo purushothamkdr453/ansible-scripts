@@ -1,0 +1,12 @@
+---
+- hosts: node1
+  remote_user: ubuntu
+
+  tasks:
+  - name: ping test 
+    shell: echo $USER
+    register: op
+
+  - debug: msg="{{op.stdout}}"
+
+

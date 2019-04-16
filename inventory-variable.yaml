@@ -1,0 +1,15 @@
+---
+- hosts: node1
+  remote_user: ubuntu 
+  vars:
+    path: /home/ubuntu/ansible-learning
+
+
+  tasks:
+  - name: printing the inventory variable
+    command: echo {{path}}
+    vars:
+       path: /home
+    register: output
+
+  - debug: msg={{output.stdout}}
