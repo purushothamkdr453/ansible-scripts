@@ -1,0 +1,8 @@
+---
+- hosts: database
+  remote_user: ubuntu
+
+
+  tasks:
+  - name: Executing the db module
+    debug: var=hostvars[inventory_hostname]
