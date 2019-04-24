@@ -1,0 +1,5 @@
+---
+- include_vars: print.yaml
+
+- name: printing the message
+  debug: msg = "{{ message }}"
